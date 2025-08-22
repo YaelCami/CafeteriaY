@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="433.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.CrudRegistrarProducto">
+   <children>
+      <Label fx:id="lblNombreProducto" layoutX="229.0" layoutY="34.0" text="Gestión Productos">
+         <font>
+            <Font name="Bodoni MT Black" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNombre" layoutX="36.0" layoutY="89.0" text="Nombre:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="106.0" layoutY="86.0" prefHeight="6.0" prefWidth="150.0" />
+      <Label fx:id="lblId" layoutX="78.0" layoutY="118.0" text="Id:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="106.0" layoutY="115.0" />
+      <Label fx:id="lblDescripcion" layoutX="14.0" layoutY="148.0" text="Descripción:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescripcion" layoutX="107.0" layoutY="145.0" />
+      <Label fx:id="lblPrecio" layoutX="53.0" layoutY="182.0" text="Precio:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="108.0" layoutY="179.0" />
+      <Label fx:id="lblTipo" layoutX="62.0" layoutY="227.0" text="Tipo:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbxTipoProducto" layoutX="107.0" layoutY="224.0" prefWidth="150.0" />
+      <AnchorPane fx:id="acpComida" layoutX="14.0" layoutY="250.0" prefHeight="179.0" prefWidth="287.0" visible="false">
+         <children>
+            <Label fx:id="lblCalorias" layoutX="31.0" layoutY="14.0" text="Calorías">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCalorias" layoutX="93.0" layoutY="10.0" prefHeight="26.0" prefWidth="150.0" />
+            <Label fx:id="lblTemperaturaC" layoutY="43.0" text="Temperatura:">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="93.0" layoutY="40.0" prefWidth="150.0" />
+            <AnchorPane fx:id="acpBebida" layoutX="14.0" layoutY="2.0" prefHeight="174.0" prefWidth="287.0">
+               <children>
+                  <Label fx:id="lblSabor" layoutX="33.0" layoutY="12.0" text="Sabor:">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="83.0" layoutY="8.0" prefHeight="26.0" prefWidth="150.0" />
+                  <Label fx:id="lblTamanio" layoutX="14.0" layoutY="45.0" text="Tamaño:">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxTamanio" layoutX="83.0" layoutY="42.0" prefWidth="150.0" />
+                  <Label fx:id="lblTemperaturaB" layoutX="-2.0" layoutY="77.0" text="Temperatura:">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxTemperaturaC" layoutX="96.0" layoutY="75.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tbProductos" layoutX="298.0" layoutY="82.0" prefHeight="200.0" prefWidth="334.0">
+        <columns>
+          <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="tbcId" prefWidth="52.79998779296875" text="Id" />
+            <TableColumn fx:id="tbcDescripcion" prefWidth="71.20001220703125" text="Descripción" />
+            <TableColumn fx:id="tbcPrecio" prefWidth="61.60003662109375" text="Precio" />
+            <TableColumn fx:id="tbcTipo" prefWidth="61.5999755859375" text="Tipo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEliminar" layoutX="434.0" layoutY="340.0" mnemonicParsing="false" onAction="#OnActionEliminar" text="Eliminar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAgregar" layoutX="327.0" layoutY="340.0" mnemonicParsing="false" onAction="#OnActionAgregar" text="Agregar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="533.0" layoutY="340.0" mnemonicParsing="false" onAction="#OnActionActualizar" text="Actualizar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="26.0" layoutY="19.0" mnemonicParsing="false" onAction="#OnActionRegresar" text="Regresar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

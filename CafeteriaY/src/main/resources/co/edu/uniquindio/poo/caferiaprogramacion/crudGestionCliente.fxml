@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.CrudGestionCliente">
+   <children>
+      <Label fx:id="lblGestionClientes" layoutX="245.0" layoutY="31.0" text="Gestión Clientes">
+         <font>
+            <Font name="Bodoni MT Black" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="86.0" text="Nombre:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="98.0" layoutY="83.0" />
+      <Label fx:id="lblId" layoutX="74.0" layoutY="116.0" text="Id:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="99.0" layoutY="113.0" />
+      <Label fx:id="lblTipoCliente" layoutX="59.0" layoutY="187.0" text="Tipo:">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="anpEstudiante" layoutX="14.0" layoutY="217.0" prefHeight="174.0" prefWidth="266.0" visible="false">
+         <children>
+            <Label fx:id="lblIdEstudiante" layoutY="-2.0" prefHeight="31.0" prefWidth="102.0" text="Id Estudiante:">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIdEstudiante" layoutX="103.0" layoutY="1.0" />
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="cbxTipoCliente" layoutX="97.0" layoutY="183.0" prefWidth="150.0" />
+      <Label layoutX="5.0" layoutY="148.0" text="Nombre Cuenta:">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="120.0" layoutY="145.0" />
+      <AnchorPane fx:id="anpDocente" layoutX="14.0" layoutY="217.0" prefHeight="158.0" prefWidth="246.0" visible="false">
+         <children>
+            <Label fx:id="lblIdDocente" layoutX="14.0" layoutY="14.0" text="IdDocente:">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIdDocente" layoutX="82.0" layoutY="10.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tbClientes" layoutX="299.0" layoutY="83.0" prefHeight="200.0" prefWidth="283.0">
+        <columns>
+          <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="tbcId" prefWidth="54.4000244140625" text="Id" />
+            <TableColumn fx:id="tbcNombreCuenta" prefWidth="99.20001220703125" text="Nombre Cuenta" />
+            <TableColumn fx:id="tbcTipo" prefWidth="51.99998779296874" text="Tipo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="289.0" layoutY="321.0" mnemonicParsing="false" onAction="#OnActionAgregar" text="Agregar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="394.0" layoutY="321.0" mnemonicParsing="false" onAction="#OnActionEliminar" text="Eliminar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="492.0" layoutY="321.0" mnemonicParsing="false" text="Actualizar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegresar" layoutX="22.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnActionRegresar" text="Regresar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
