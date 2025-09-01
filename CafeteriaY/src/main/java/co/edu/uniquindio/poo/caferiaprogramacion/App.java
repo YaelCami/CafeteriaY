@@ -1,12 +1,10 @@
 package co.edu.uniquindio.poo.caferiaprogramacion;
 
-import co.edu.uniquindio.poo.caferiaprogramacion.controller.EmpleadoController;
-import co.edu.uniquindio.poo.caferiaprogramacion.viewController.EmpleadoViewController;
+import co.edu.uniquindio.poo.caferiaprogramacion.controller.*;
+import co.edu.uniquindio.poo.caferiaprogramacion.viewController.*;
 import javafx.application.Application;
-import co.edu.uniquindio.poo.caferiaprogramacion.controller.PrimaryController;
 import co.edu.uniquindio.poo.caferiaprogramacion.model.Cafeteria;
 import co.edu.uniquindio.poo.caferiaprogramacion.model.Empleado;
-import co.edu.uniquindio.poo.caferiaprogramacion.viewController.PrimaryViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -80,6 +78,88 @@ public class App extends Application {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public void openGestionProducto(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudGestionProducto.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            GestionProductoViewController viewController = loader.getController();
+            GestionProductoController controller = new GestionProductoController();
+            viewController.setGestionProductoController(controller);
+            controller.setApp(this);
+            viewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void openGestionClientes(Empleado empleado){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudGestionCliente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            GestionClienteViewController viewController = loader.getController();
+            GestionClienteController controller = new GestionClienteController(cafeteria);
+            viewController.setGestionClienteController(controller);
+            controller.setApp(this);
+            controller.setEmpleado(empleado);
+            controller.setCafeteria(cafeteria);
+            viewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void openTomarPedido(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudPedidos.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            PedidosViewController viewController = loader.getController();
+            PedidosController controller = new PedidosController();
+            viewController.setPedidosController(controller);
+            controller.setApp(this);
+            viewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void openReporteVenta(){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudReporteVentas.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ReporteVentasViewController viewController = loader.getController();
+            ReporteVentasController controller = new ReporteVentasController();
+            viewController.setReporteVentasController(controller);
+            controller.setApp(this);
+            viewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 
 

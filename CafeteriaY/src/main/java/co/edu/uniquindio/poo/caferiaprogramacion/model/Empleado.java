@@ -24,6 +24,7 @@ public class Empleado extends Persona{
         this.listVisitantes = new ArrayList<>();
         this.listDocentes = new ArrayList<>();
         this.listPedidos = new ArrayList<>();
+        this.cafeteria = cafeteria;
     }
 
     public boolean agregarBebida(Bebida bebida) {
@@ -35,6 +36,15 @@ public class Empleado extends Persona{
     public boolean agregarCombo(Combo combo){
         return cafeteria.agregarCombo(combo);
 
+    }
+    public void agregarCliente(Cliente cliente){
+        cafeteria.agregarCliente(cliente);
+    }
+    public void eliminarCliente(String id){
+        cafeteria.eliminarCliente(id);
+    }
+    public void actualizarCliente(String id, Cliente actualizado){
+        cafeteria.actualizarCliente(id, actualizado);
     }
 
     public boolean  agregarEstudiante(Estudiante estudiante){

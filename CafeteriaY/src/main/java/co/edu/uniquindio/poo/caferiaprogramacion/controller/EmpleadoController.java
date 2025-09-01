@@ -24,4 +24,26 @@ public class EmpleadoController {
         this.empleado = empleado;
     }
 
+    public void regresarPrimary(){
+        app.openViewPrincipal();
+    }
+
+    public void abrirGestionProductos(){
+        app.openGestionProducto();
+    }
+
+    public void abrirGestionClientes(){
+        app.openGestionClientes(empleado);
+    }
+
+    public void abrirTomarPedido(){
+        app.openTomarPedido();
+    }
+
+    public void abrirReporteVentas(){
+        app.openReporteVenta();
+    }
+
+
+
 }

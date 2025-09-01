@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="433.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.CrudRegistrarProducto">
+<AnchorPane prefHeight="433.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.viewController.GestionProductoViewController">
    <children>
-      <Label fx:id="lblNombreProducto" layoutX="229.0" layoutY="34.0" text="Gestión Productos">
+      <Label fx:id="lblGestionProducto" layoutX="229.0" layoutY="34.0" text="Gestión Productos">
          <font>
             <Font name="Bodoni MT Black" size="26.0" />
          </font>
@@ -59,7 +59,7 @@
                   <Font name="Berlin Sans FB" size="16.0" />
                </font>
             </Label>
-            <ComboBox layoutX="93.0" layoutY="40.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbxTemperaturaC" layoutX="93.0" layoutY="40.0" prefWidth="150.0" />
             <AnchorPane fx:id="acpBebida" layoutX="14.0" layoutY="2.0" prefHeight="174.0" prefWidth="287.0">
                <children>
                   <Label fx:id="lblSabor" layoutX="33.0" layoutY="12.0" text="Sabor:">
@@ -67,7 +67,7 @@
                         <Font name="Berlin Sans FB" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="83.0" layoutY="8.0" prefHeight="26.0" prefWidth="150.0" />
+                  <TextField fx:id="txtSabor" layoutX="83.0" layoutY="8.0" prefHeight="26.0" prefWidth="150.0" />
                   <Label fx:id="lblTamanio" layoutX="14.0" layoutY="45.0" text="Tamaño:">
                      <font>
                         <Font name="Berlin Sans FB" size="16.0" />
@@ -79,7 +79,7 @@
                         <Font name="Berlin Sans FB" size="16.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="cbxTemperaturaC" layoutX="96.0" layoutY="75.0" prefWidth="150.0" />
+                  <ComboBox fx:id="cbxTemperaturaB" layoutX="96.0" layoutY="75.0" prefWidth="150.0" />
                </children>
             </AnchorPane>
          </children>
@@ -103,7 +103,7 @@
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="533.0" layoutY="340.0" mnemonicParsing="false" onAction="#OnActionActualizar" text="Actualizar">
+      <Button fx:id="btnActualizar" layoutX="533.0" layoutY="340.0" mnemonicParsing="false" onAction="#OnActionActualizar" text="Actualizar">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>

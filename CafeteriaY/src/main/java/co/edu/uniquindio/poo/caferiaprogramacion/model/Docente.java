@@ -1,18 +1,18 @@
 package co.edu.uniquindio.poo.caferiaprogramacion.model;
 
 public class Docente extends Cliente {
-    private String tarjeta;
+    private String idDocente;
 
-    public Docente(String nombre, String id, String nombreCuenta, String tarjeta){
-        super(nombre, id, nombreCuenta);
-        this.tarjeta = tarjeta;
+    public Docente(String nombre, String id, String nombreCuenta, TipoCliente tipoCliente, String idDocente){
+        super(nombre, id, nombreCuenta, tipoCliente);
+        this.idDocente = idDocente;
     }
 
-    public String getTarjeta() {
-        return tarjeta;
+    public String getIdDocente() {
+        return idDocente;
     }
 
-    public void setTarjeta(String tarjeta) {
-        this.tarjeta = tarjeta;
+    public void setIdDocente(String tarjeta) {
+        this.idDocente = idDocente;
     }
 }

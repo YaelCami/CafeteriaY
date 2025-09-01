@@ -32,6 +32,9 @@ public class EmpleadoViewController {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+        if (lblNombre != null && empleado != null) {
+            lblNombre.setText("Hola, " + empleado.getNombre());
+        }
     }
 
     public void setEmpleadoController(EmpleadoController empleadoController) {
@@ -39,23 +42,28 @@ public class EmpleadoViewController {
     }
 
     @FXML
-    void OnActionGestionProducto() {
+    void OnActionGestionProductos() {
+        empleadoController.abrirGestionProductos();
+    }
+    @FXML
+    void OnActionGestionClientes() {
+        empleadoController.abrirGestionClientes();
 
     }
     @FXML
-    void OnActionRegistrarCliente() {
-
+    void OnActionRegresar(){
+        empleadoController.regresarPrimary();
     }
-    @FXML
-    void OnActionRegresar(){}
 
     @FXML
     void OnActionTomarPedido() {
+        empleadoController.abrirTomarPedido();
 
     }
 
     @FXML
     void OnActionReporteVentas() {
+        empleadoController.abrirReporteVentas();
 
     }
 
@@ -70,6 +78,6 @@ public class EmpleadoViewController {
     @FXML
     void initialize() {
         System.out.println("CrudEmpleado inicializado");
-
     }
+
 }

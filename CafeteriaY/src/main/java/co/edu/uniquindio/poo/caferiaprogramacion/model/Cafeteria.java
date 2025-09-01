@@ -14,6 +14,7 @@ public class Cafeteria {
     private List<Visitante> listVisitantes;
     private List<Empleado> listEmpleados;
     private List<Pedido> listPedido;
+    private List<Cliente> listClientes;
 
     public Cafeteria(String nombre, String eslogan) {
         this.nombre = nombre;
@@ -26,7 +27,46 @@ public class Cafeteria {
         this.listVisitantes = new ArrayList<>();
         this.listEmpleados = new ArrayList<>();
         this.listPedido = new ArrayList<>();
+        this.listClientes = new ArrayList<>();
 
+    }
+
+    public List<Cliente> getListClientes() {
+        return listClientes;
+    }
+
+    public void setListClientes(List<Cliente> listClientes) {
+        this.listClientes = listClientes;
+    }
+
+    public List<Combo> getListCombos() {
+        return listCombos;
+    }
+
+    public void setListCombos(List<Combo> listCombos) {
+        this.listCombos = listCombos;
+    }
+
+    public boolean verificarCliente(String id) {
+        boolean centinela = false;
+        for (Estudiante e : listEstudiantes) {
+            if (e.getId().equals(id)) {
+                centinela = true;
+                break;
+            }
+        }
+        for (Docente d : listDocentes) {
+            if (d.getId().equals(id)) {
+                centinela = true;
+                break;
+            }
+        }
+        for (Visitante v : listVisitantes) {
+            if (v.getId().equals(id)) {
+                centinela = true;
+            }
+        }
+        return centinela;
     }
     public boolean verificarBebida(String id) {
         boolean centinela = false;
@@ -104,6 +144,49 @@ public class Cafeteria {
 
             }
 
+        }
+        return centinela;
+    }
+
+    public Cliente buscarCliente(String id) {
+        for (Estudiante e: listEstudiantes) {
+            if (e.getId().equalsIgnoreCase(id)) {
+                return e;
+            }
+        }
+        for (Docente d: listDocentes) {
+            if (d.getId().equalsIgnoreCase(id)) {
+                return d;
+            }
+        }
+        return null;
+    }
+
+    public boolean eliminarCliente(String id) {
+        boolean centinela = false;
+        for (Estudiante e: listEstudiantes) {
+            if (e.getId().equals(id)) {
+                listEstudiantes.remove(e);
+                listClientes.remove(e);
+                centinela = true;
+                break;
+            }
+        }
+        for (Docente d: listDocentes) {
+            if (d.getId().equals(id)) {
+                listDocentes.remove(d);
+                listClientes.remove(d);
+                centinela = true;
+                break;
+            }
+        }
+        for (Visitante v: listVisitantes) {
+            if (v.getId().equals(id)) {
+                listVisitantes.remove(v);
+                listClientes.remove(v);
+                centinela = true;
+                break;
+            }
         }
         return centinela;
     }
@@ -188,6 +271,31 @@ public class Cafeteria {
         return centinela;
     }
 
+    public boolean agregarCliente(Cliente cliente) {
+        boolean centinela = false;
+        if (!verificarCliente(cliente.getId())){
+            if (cliente instanceof Estudiante && cliente.getTipoCliente() == TipoCliente.ESTUDIANTE) {
+                listEstudiantes.add((Estudiante) cliente);
+                listClientes.add(cliente);
+                centinela = true;
+            }
+            if (cliente instanceof Docente && cliente.getTipoCliente() == TipoCliente.DOCENTE) {
+                listDocentes.add((Docente) cliente);
+                listClientes.add(cliente);
+                centinela = true;
+            }
+
+            if (cliente instanceof Visitante && cliente.getTipoCliente() == TipoCliente.VISITANTE) {
+                listVisitantes.add((Visitante) cliente);
+                listClientes.add(cliente);
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+
+
     public boolean agregarBebida(Bebida bebida) {
         boolean centinela = false;
         if(!verificarBebida(bebida.getId())){
@@ -256,6 +364,41 @@ public class Cafeteria {
         if(!verificarPedido(pedido.getId())){
             listPedido.add(pedido);
             centinela = true;
+        }
+        return centinela;
+    }
+
+    public boolean actualizarCliente(String id, Cliente actualizado) {
+        boolean centinela = false;
+        for (Estudiante e : listEstudiantes) {
+            if (e.getId().equals(id)) {
+                e.setNombre(actualizado.getNombre());
+                e.setId(actualizado.getId());
+                e.setNombreCuenta(actualizado.getNombreCuenta());
+                e.setTipoCliente(actualizado.getTipoCliente());
+                centinela = true;
+                break;
+            }
+        }
+        for (Docente d : listDocentes) {
+            if (d.getId().equals(id)) {
+                d.setNombre(actualizado.getNombre());
+                d.setId(actualizado.getId());
+                d.setNombreCuenta(actualizado.getNombreCuenta());
+                d.setTipoCliente(actualizado.getTipoCliente());
+                centinela = true;
+                break;
+            }
+        }
+        for (Visitante v : listVisitantes) {
+            if (v.getId().equals(id)) {
+                v.setNombre(actualizado.getNombre());
+                v.setId(actualizado.getId());
+                v.setNombreCuenta(actualizado.getNombreCuenta());
+                v.setTipoCliente(actualizado.getTipoCliente());
+                centinela = true;
+                break;
+            }
         }
         return centinela;
     }
@@ -334,7 +477,7 @@ public class Cafeteria {
                 docente.setNombre(docenteActualizada.getNombre());
                 docente.setId(docenteActualizada.getId());
                 docente.setNombreCuenta(docenteActualizada.getNombreCuenta());
-                docente.setTarjeta(docenteActualizada.getTarjeta());
+                docente.setIdDocente(docenteActualizada.getIdDocente());
                 centinela= true;
                 break;
             }

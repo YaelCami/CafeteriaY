@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.CrudPedidos">
+<AnchorPane prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.caferiaprogramacion.viewController.PedidosViewController">
    <children>
       <Label fx:id="lblPedido" layoutX="253.0" layoutY="29.0" text="Pedido">
          <font>
@@ -35,7 +34,7 @@
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <ComboBox layoutX="90.0" layoutY="251.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbxCombo" layoutX="90.0" layoutY="251.0" prefWidth="150.0" />
       <TableView fx:id="tbPedido" layoutX="285.0" layoutY="77.0" prefHeight="200.0" prefWidth="262.0">
         <columns>
           <TableColumn fx:id="tbcNombre" prefWidth="67.20001220703125" text="Nombre" />
@@ -62,11 +61,6 @@
          </font>
       </Label>
       <TextField fx:id="txtHora" layoutX="85.0" layoutY="136.0" prefHeight="26.0" prefWidth="158.0" />
-      <Label fx:id="lblPrecio" layoutX="416.0" layoutY="318.0" text="Precio Total:">
-         <font>
-            <Font name="Berlin Sans FB" size="16.0" />
-         </font>
-      </Label>
       <Label fx:id="lblTotalPagar" layoutX="505.0" layoutY="318.0" text="Precio">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
@@ -87,17 +81,22 @@
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="lblRecomendacion" layoutX="43.0" layoutY="393.0" text="Recomendación:">
-         <font>
-            <Font name="Berlin Sans FB" size="16.0" />
-         </font>
-      </Label>
       <Label fx:id="lblRecomendado" layoutX="176.0" layoutY="394.0" text="Recomendado">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegresar" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" text="Regresar">
+      <Button fx:id="btnRegresar" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnActionRegresar" text="Regresar">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRecomendacion" layoutX="43.0" layoutY="388.0" mnemonicParsing="false" onAction="#OnActionRecomendar" text="Recomendación">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPrecioTotal" layoutX="443.0" layoutY="312.0" mnemonicParsing="false" onAction="#OnActionPrecioTotal" text="Total">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>

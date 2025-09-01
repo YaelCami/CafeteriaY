@@ -3,8 +3,8 @@ package co.edu.uniquindio.poo.caferiaprogramacion.model;
 public class Estudiante extends Cliente{
     private String idEstudiante;
 
-    public Estudiante(String nombre, String id,String nombreCuenta, String idEstudiante){
-        super(nombre, id, nombreCuenta);
+    public Estudiante(String nombre, String id,String nombreCuenta, String idEstudiante, TipoCliente tipoCliente) {
+        super(nombre, id, nombreCuenta, tipoCliente);
         this.idEstudiante=idEstudiante;
     }
 
